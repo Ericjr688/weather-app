@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root{
+  box-sizing: border-box;
+  --main-font: "Poppins", sans-serif;
+  --font-color: #272e30;
+  --bg-color: whitesmoke;
+  --accent-one: #343e40;
+  --accent-two: #7DA2A9;
+  --accent-three: whitesmoke;
+  --accent-four: #A0AECD;
+  --large-font: 3.2rem;
+  --medium-font: 2rem;
+  --small-font: 1.5rem;
+  --very-large-font: 4.5rem;
+  --very-small-font: 1.2rem;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: var(--main-font);
+  color: var(--font-color);
+  min-height:100vh;
+  background-color: var(--bg-color);
+  margin: 0;
+}
+
+#content{
+  display: grid;
+  grid-template-rows: .5fr 3fr 2fr 3fr;
+  height: 100%;
+  position: relative;
+  overflow-y: scroll;
+  grid-template-areas:
+      "header"
+      "summary"
+      "detail"
+      "description";
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  align-items: center;
+  background-color: var(--accent-three);
+  color: var(--accent-one);
+  grid-area: header;
+  font-size: var(--small-font);
+  position: relative;
+
+  height:6rem;
+}
+
+.header .logo-container{
+  height: 50%;
+  position: absolute;
+}
+
+.header .logo-container img{
+  height:100%;
+}
+
+.header .title{
+  margin-left: 5rem;
+  font-weight: 600;
+}
+
+.header .search-bar{
+  width: 60%;
+}
+
+.header .search-bar form{
+  width:100%;
+  display: flex;
+}
+
+.header .search-bar input{
+  flex: 1 1 auto;
+  font-size: var(--small-font);
+  padding: 5px 10px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.header .search-bar form button{
+  margin-left: -2px;
+  overflow: hidden;
+}
+
+.header #temp-unit{
+  width:5%;
+}
+
+
+.summary {
+  background-color: var(--accent-one);
+  color: var(--accent-three);
+  font-size: var(--small-font);
+  grid-area: summary;
+  padding: 2rem;
+}
+
+.summary .summary-main {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.summary .summary-main .summary-main-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary .summary-main .summary-main-left .city {
+  font-size: var(--medium-font);
+}
+
+.summary .summary-main .summary-main-left .weather {
+
+}
+
+.summary .summary-main .summary-main-left .current-temp {
+  font-size: var(--very-large-font);
+  font-weight:lighter;
+}
+
+.summary .summary-main .summary-main-left .extreme-temp {
+  display: flex;
+  font-size: var(--very-small-font);
+  gap: .6rem;
+}
+
+
+.detail {
+  grid-area: detail;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem;
+  font-size: var(--very-small-font);
+  padding: 2rem;
+  justify-content: center;
+  justify-items: center;
+}
+
+.detail .detail-container {
+
+}
+
+.detail .detail-container .detail-title {
+  display: flex;
+  justify-content: center;
+  font-size: .8rem;
+}
+
+.detail .detail-container .detail-value {
+  display: flex;
+  justify-content: center;
+}
+
+.description {
+  background-color: #343e40;
+  grid-area: description;
+  color: var(--accent-three);
+  font-size: var(--small-font);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp::after {
+  content: "\00b0";
+}
+
+.min-temp::before {
+  content: "L: ";
+}
+
+.max-temp::before {
+  content: "H: ";
+}
+
+.desc-weather::before {
+  content: "Today: ";
+}
+
+.desc-min-temp::before {
+  content: "\00b0. The low tonight will be ";
+}
+
+.desc-min-temp::after {
+  content: "\00b0";
+}
+
+.desc-max-temp::before {
+  content: ". The high will be ";
+}
+
+
+
+
+
+
+
+
+
+button {
+  font-size: var(--small-font);
+  font-family: inherit;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--accent-one);
+  color: var(--accent-three);
+}
