@@ -1,10 +1,9 @@
 import { getTimeFromDate } from "./logic.js";
 
+// generate the summary section of the website
 function loadSummary(weatherData) {
   const summary = document.querySelector('.summary');
   summary.style.visibility = 'visible';
-
-  // Left side
   const summaryMain = document.createElement('div');
   summaryMain.classList.add('summary-main');
   const left = document.createElement('div');
@@ -47,6 +46,7 @@ function loadSummary(weatherData) {
   summary.appendChild(summaryMain);
 }
 
+// generate the details section of the website
 function loadDetails(data){
   const details = document.querySelector('.detail');
   details.style.visibility = 'visible';
@@ -118,6 +118,7 @@ function loadDetails(data){
   })
 }
 
+// generate description section of the website
 function loadDescription(data){
   const description = document.querySelector('.description');
   description.style.visibility = 'visible';
@@ -138,8 +139,6 @@ function loadDescription(data){
   maxTemp.classList.add('temp');
   maxTemp.classList.add('desc-max-temp');
   description.appendChild(maxTemp);
-
-  // description.textContent = `Today: ${data['weather'][0]['description']}. The high will be ${Math.round(data['main']['temp_max'])}\u00B0. The low tonight will be ${Math.round(data['main']['temp_min'])}\u00B0.`
 }
 
 function clearBox(elementSelector) {
